@@ -6,16 +6,20 @@
     </head>
 
     <body>
-        <h1>Insult Me, Trump!</h1>
+        <h1>Trumpian Nickname Generator!</h1>
+        
+        <p>Have you ever seen Trump dish out condescending nicknames like "Crooked Hillary" and "Shifty Schiff" and ever wished you had one for yourself?  Well now's your chance!</p> 
         
         <div id="app">
             <h2>Enter your name</h2>
             <input v-model="name" placeholder="Name goes here">
-            <button v-on:click="generateName">Generate My Nickname</button>
+            <button v-on:click="generateName">Insult me, Trump!</button>
             <br>
 
             <p v-if="show_nickname" id="result">{{ message }}</p>
         </div>
+        
+        <p>NOTE: This is totally meant to be parody</p>
         <script src="./index.js"></script>
         <script src="./terms.js"></script>
     </body>
