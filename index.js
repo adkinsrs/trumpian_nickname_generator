@@ -1,8 +1,3 @@
-// I really wanted to read from file but Javascript really has no way for this except for installing node modules.
-var terms = [
-
-];
-
 var app = new Vue({
     el: '#app',
     data: {
@@ -12,21 +7,17 @@ var app = new Vue({
         term: ''
     },
     methods: {
-        selectTerm: function() {
-            terms = fs.readFile('terms.txt', 'utf-8', (err, data) => { 
-                if (err) throw err; 
-              
-                return data.split(/\n/);
-            }) 
-
+        selectTerm: function(terms) {
           // Using "random" to select a term to return by index number
-          return terms[Math.floor(Math.random()*terms.length)]
+          term = terms[Math.floor(Math.random()*terms.length)]
+          // capitalize word
+          return term.charAt(0).toUpperCase() + term.slice(1)
         },
        
         generateName: function() {
             // Generate nickname
             this.show_nickname = true;
-            this.term = this.selectTerm();
+            this.term = this.selectTerm(terms);
             this.message = "Uh oh! Looks like President Trump really has it out for you, " + this.term + " " + this.name + "!";
         }
     }
