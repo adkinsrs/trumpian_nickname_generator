@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Insult Me, Trump!</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    </head>
+
+    <body>
+        <h1>Insult Me, Trump!</h1>
+        
+        <div id="app">
+            <h2>Enter your name</h2>
+            <input v-model="name" placeholder="Name goes here">
+            <button v-on:click="generateName">Generate My Nickname</button>
+            <br>
+
+            <p v-if="show_nickname" id="result">{{ message }}</p>
+        </div>
+        <script src="index.js"></script>
+    </body>
+
+</html>
